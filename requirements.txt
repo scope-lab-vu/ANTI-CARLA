@@ -1,5 +1,3 @@
-tensorflow-gpu==1.14
-keras==2.2.4
 dictor
 pygame
 tabulate
