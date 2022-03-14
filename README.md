@@ -19,7 +19,7 @@ To run this framework you will need to download the CARLA simulator.
 1. You will also need to install CARLA 0.9.10, along with the additional maps.
 Download CARLA 0.9.10 from [here](https://github.com/carla-simulator/carla/releases/tag/0.9.10) for more instructions. (Our setup works with CARLA 0.9.10 version. Using another version of the simulator will result in a version and API mismatch error.)
 
-2. Driving Pipeline Weights: You will need to download the Learning By Checting controller pre-trained weights from here (https://vanderbilt365-my.sharepoint.com/:u:/g/personal/shreyas_ramakrishna_vanderbilt_edu/Eaq1ptU-YJJPrqmEYUK_dx8Bad2KqhVQZJkKwngWnuMWRA?e=U3dtyf). The driving pipeline architecture can be got from [Learning By Cheating](https://github.com/bradyz/2020_CARLA_challenge). Save the model.ckpt file to trained_models/Learning_by_cheating folder. 
+2. Driving Pipeline Weights: You will need to download the Learning By Checting controller pre-trained weights from [here](https://vanderbilt365-my.sharepoint.com/:u:/g/personal/shreyas_ramakrishna_vanderbilt_edu/Eaq1ptU-YJJPrqmEYUK_dx8Bad2KqhVQZJkKwngWnuMWRA?e=U3dtyf). The driving pipeline architecture can be got from [Learning By Cheating](https://github.com/bradyz/2020_CARLA_challenge). Save the model.ckpt file to trained_models/Learning_by_cheating folder. 
 
 You can also automatically download the simulator. For this, enter into this repo and execute this script ```./downloads.sh``` to download these three requirements automatically into the required folders.
 
