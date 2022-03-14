@@ -29,7 +29,7 @@ You can also automatically download the simulator. For this, enter into this rep
 To run the scene generation workflow with CARLA, clone this repo.
 
 ```bash
-git clone https://github.com/Shreyasramakrishna90/Testing-Framework.git
+git clone https://github.com/scope-lab-vu/ANTI-CARLA.git
 ```
 Then, create a conda environment to run the experiments. 
 
@@ -41,17 +41,6 @@ python3 -m pip install -r requirements.txt
 cd Testing-Framework
 ./make_volume_folder.sh  
 ```
-
-# Adapter Glue Code
-The framework allows the user test their controllers through an adapter glue code. There are some rules and constraints that needs to be followes in defining the user code. Violating these rules will throw errors.
-
-To evaluate the framwork, put the tested agent under
-```
-/transfuser/leaderboard/team_code
-```
-For example look at the **transfuser_agent.py** and **image_agent.py** scripts in the [team_code](https://github.com/Shreyasramakrishna90/Testing-Framework/tree/main/leaderboard/team_code) folder. These files are taken from the respective controller github repos. 
-
-Further, there could be several utility files required for running the controller. Create a folder in the main repo path and add all the files. For example, we have created the [transfuser](https://github.com/Shreyasramakrishna90/Testing-Framework/tree/main/transfuser) and [carla_project](https://github.com/Shreyasramakrishna90/Testing-Framework/tree/main/carla_project) folders for the transfuser and learning by cheating controllers.
 
 # Running the Carla setup 
 
@@ -74,14 +63,25 @@ You will need to make the following changes in the ./run_evaluation file. This s
 2. PORT: The simulator port (default:2000)
 3. HAS_DISPLAY: 1 = display simulation run, 2 = headless mode (no display)
 
+# Adapter Glue Code
+The framework allows the user test their controllers through an adapter glue code. There are some rules and constraints that needs to be followes in defining the user code. Violating these rules will throw errors.
+
+To evaluate the framwork, put the tested agent under
+```
+/transfuser/leaderboard/team_code
+```
+For example look at the **transfuser_agent.py** and **image_agent.py** scripts in the [team_code](https://github.com/Shreyasramakrishna90/Testing-Framework/tree/main/leaderboard/team_code) folder. These files are taken from the respective controller github repos. 
+
+Further, there could be several utility files required for running the controller. Create a folder in the main repo path and add all the files. For example, we have created the [transfuser](https://github.com/scope-lab-vu/ANTI-CARLA/tree/main/transfuser) and [carla_project](https://github.com/scope-lab-vu/ANTI-CARLA/tree/main/carla_project) folders for the transfuser and learning by cheating controllers.
+
 
 ## References
 
 The experiments in this work are built using these two works.
 
-1. Transfuser [[paper]](https://openaccess.thecvf.com/content/CVPR2021/html/Prakash_Multi-Modal_Fusion_Transformer_for_End-to-End_Autonomous_Driving_CVPR_2021_paper.html) - Transfuser is one of the controllers that we have integrated with this framework. [[GitHub]](https://github.com/autonomousvision/transfuser)
+1. Learning By Cheating [[paper]](https://arxiv.org/abs/1912.12294) - Is the other controller integrated into the framework [[GitHub]](https://github.com/bradyz/2020_CARLA_challenge) 
 
-2. Learning By Cheating [[paper]](https://arxiv.org/abs/1912.12294) - Is the other controller integrated into the framework [[GitHub]](https://github.com/bradyz/2020_CARLA_challenge) 
+2. Transfuser [[paper]](https://openaccess.thecvf.com/content/CVPR2021/html/Prakash_Multi-Modal_Fusion_Transformer_for_End-to-End_Autonomous_Driving_CVPR_2021_paper.html) - Transfuser is one of the controllers that we have integrated with this framework. [[GitHub]](https://github.com/autonomousvision/transfuser)
 
 3. The samplers are taken from our previous work "Risk Aware Scene Sampling for Autonomous Cyber-Physical System" [[paper]](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=M6Yu9GEAAAAJ&citation_for_view=M6Yu9GEAAAAJ:hqOjcs7Dif8C) [[GitHub]](https://github.com/Shreyasramakrishna90/Risk-Aware-Scene-Generation/blob/main/README.md)
 
