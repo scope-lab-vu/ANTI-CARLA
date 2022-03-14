@@ -18,10 +18,6 @@ export DATA_FOLDER=data/simulation-data
 export RECORD_FOLDER=data/recorded
 export SAVE_PATH=data/expert # path for saving episodes while evaluating
 export Scenarion_Description_Files=${PROJECT_PATH}/scene_generator
-#export CARLA_ROOT=/home/baiting/Desktop/CARLA_0.9.10
-#export PROJECT_PATH=/home/baiting/Desktop/evaluation_framework
-#export utils_route=/home/baiting/Desktop/evaluation_framework/utils
-#export HAS_DISPLAY=1
 #==========================================================================
 
 #====================Constants Variables ==================================
