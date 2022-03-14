@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #pull carla image
-if [ ! -d CARLA_0.9.9 ]
+if [ ! -d CARLA_0.9.10 ]
 then
   echo $OSTYPE
   if [[ "$OSTYPE" == "linux-gnu"* ]];
