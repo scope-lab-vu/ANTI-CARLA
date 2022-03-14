@@ -3,20 +3,25 @@
 Despite recent advances in autonomous driving systems, accidents such as the fatal Uber crash in 2018 show their susceptibility to edge cases. These systems need to be thoroughly tested and validated before being deployed in the real world to avoid such events. Testing in open-world scenarios can be difficult, time-consuming, and expensive. This can be addressed by using driving simulators such as CARLA instead. A key part of such tests is adversarial testing, where the goal is to find scenarios that lead to failures of the given system. While there have been several independent efforts in adversarial testing, no established testing framework that enables adaptive stress testing is currently available for CARLA. We propose ANTI-CARLA, an adversarial testing framework in CARLA for testing autonomous driving systems. The operating conditions in which a given system should be tested are specified in a scenario description language. The framework's key capability is an adversarial search mechanism that searches for trajectories of the operating conditions that will result in a failure. This way, ANTI-CARLA extends the CARLA simulator with the capability to perform adversarial testing on any given driving pipeline. We use ANTI-CARLA to test the Learning By Cheating (LBC) approach, automatically finding a range of fail cases despite LBC reaching an accuracy of 100\% in the CARLA challenge. Some examples of the scenes generated in this work are shown in the gif below. 
 
 <p align="center">
-  <img src="gif/cloudy.gif" />
-  <img src="gif/evening.gif" />
-  <img src="gif/cloudy-rainy.gif" />
+  <img src="gif/crash.gif" />
+  <img src="gif/red-light.gif" />
+  <img src="gif/night.gif" />
 </p>
 
+(Left) The AV system crashing on an interstate. (Center) The AV system running over a red light. (Right) The AV system driving in a night scene on an interstate.  
 
 ## Downloads
+
+To run this framework you will need to download the CARLA simulator. 
 
 ***Manual Downloads***
 
 1. You will also need to install CARLA 0.9.10, along with the additional maps.
 Download CARLA 0.9.10 from [here](https://github.com/carla-simulator/carla/releases/tag/0.9.10) for more instructions. (Our setup works with CARLA 0.9.10 version. Using another version of the simulator will result in a version and API mismatch error.)
 
-Save the model.ckpt file to model_ckpt/transfuser folder. 
+2. Driving Pipeline Weights: You will need to download the Learning By Checting controller pre-trained weights from here (https://vanderbilt365-my.sharepoint.com/:u:/g/personal/shreyas_ramakrishna_vanderbilt_edu/Eaq1ptU-YJJPrqmEYUK_dx8Bad2KqhVQZJkKwngWnuMWRA?e=U3dtyf). The driving pipeline architecture can be got from [Learning By Cheating](https://github.com/bradyz/2020_CARLA_challenge). Save the model.ckpt file to trained_models/Learning_by_cheating folder. 
+
+You can also automatically download the simulator. For this, enter into this repo and execute this script ```./downloads.sh``` to download these three requirements automatically into the required folders.
 
 
 ## Setup Virtual Environment
@@ -37,8 +42,8 @@ cd Testing-Framework
 ./make_volume_folder.sh  
 ```
 
-# Pluggable Code Skeleton
-The framework allows the user test their controllers through a pluggable code skeleton. There are some rules and constraints that needs to be followes in defining the user code. Violating these rules will throw errors.
+# Adapter Glue Code
+The framework allows the user test their controllers through an adapter glue code. There are some rules and constraints that needs to be followes in defining the user code. Violating these rules will throw errors.
 
 To evaluate the framwork, put the tested agent under
 ```
