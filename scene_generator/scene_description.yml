@@ -1,0 +1,49 @@
+# This is the world description file that can be used to select the world parameters for the test cases.
+# parameters can be turned off -> false or on -> true. Specific distribution ranges and values can also be selected.
+# A world is described by a scenario, which is a collection of scenes. Each scenario can be executed in a Carla town, and each town will have several connected regions.
+#For example, town5 has 5 regions. 1 -> freeway, 2 -> free way, 3 -> intersection, 4 -> free way, 5 -> downtown
+Name: World Description File
+Scenario Description:
+    town: 5 #Avaliable towns 5,6,7. A town can have N regions 5 -> 5
+    regions: 5 #If regions are not available, the scenario generator will throw an error
+    weather:
+      cloudiness: [80,100] # min:0, max:100
+      precipitation: [80,100] # min:0, max:100
+      precipitation_deposits: false # min:0, max:100
+      sun_altitude_angle: [20,50] # min:-90, max:90
+      wind_intensity: false # min:0, max:100
+      sun_azimuth_angle: false # min:0, max:100
+      wetness: false # min:0, max:100
+      fog_distance: false # min:0, max:100
+      fog_density: false # min:0, max:100
+    pedestrian_density: [0,2] #false -> no pedestian, true -> pedestrian range [0,2]
+    traffic_density: [25,50] #false -> no traffic, true -> traffic range [0,10]
+Constraints: #A constraint can be placed on the rate of change (+/- x) in the parameter values.
+    pedestrian_density_delta: 1 #The pedestrian density will vary by +/-1 between regions
+    traffic_density_delta: 2 #The traffic density will vary by +/-2 between regions
+    weather_delta: 2 #The weather parameters will vary by +/-2 between regions
+Initial Conditions: # A scenario can be strated from a specific initial condition
+    weather: #A value (not range) need to be specified for the weather. If you have selected false earlier, you need to provide a val=0
+      cloudiness: 0
+      precipitation: 0
+      precipitation_deposits: 0
+      sun_altitude_angle: 30
+      wind_intensity: 0
+      sun_azimuth_angle: 0
+      wetness: 0
+      fog_distance: 0
+      fog_density: 0
+    region: 1 #scenario will start from region1
+    traffic_density: 5
+    pedestrian_density: 0
+Infraction Metrics: #Infraction metrics that can be recorded for each scene
+    Driving score: true #true -> record,  false -> do not record
+    Route completion: true
+    Infraction Penalty: true
+    Off-road driving: false
+    Route deviation: false
+    Agent blocked: false
+    Simulation timeout: false
+    Route timeout: false
+Record Location: false #false -> default location "/project_path/data/results"  true -> "/project_path/path_to_store/"
+Record Frequency: 20 #frequency at which the infractions need to be recorded. 20HZ is the default

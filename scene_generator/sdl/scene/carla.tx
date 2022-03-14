@@ -1,0 +1,32 @@
+Scene:
+    simple_types *= SimpleType
+    entities+=Entity
+;
+
+
+Entity:
+  'entity' name=ID '{'
+        properties*=Property
+  '}'
+;
+
+
+Property:
+    name=ID ':' type=[Type]
+;
+
+Type:
+    Entity | SimpleType
+;
+
+distribution:
+     '('min=NUMBER','max=NUMBER')'
+;
+
+SimpleType:
+    'type' name=ID
+;
+
+Comment:
+  /\/\/.*$/
+;

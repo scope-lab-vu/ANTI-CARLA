@@ -1,0 +1,36 @@
+//Each CARLA scene is defined in-terms of spatial parameters and temporal parameters
+//Temporal parameters include the weather pattern, time-of-day, and traffic density
+
+type int
+type string
+
+
+entity town {
+    id: string
+    town: string
+}
+
+entity weather {
+cloudiness: distribution
+precipitation: distribution
+precipitation_deposits: distribution
+sun_altitude_angle: distribution
+wind_intensity: distribution
+sun_azimuth_angle: distribution
+wetness: distribution
+fog_distance: distribution
+fog_density: distribution
+}
+
+entity traffic_density {
+traffic_density: distribution
+}
+
+entity pedestrian_density {
+pedestrian_density: distribution
+}
+
+entity distribution {
+min: int
+max: int
+}

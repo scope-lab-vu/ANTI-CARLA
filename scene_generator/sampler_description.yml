@@ -1,0 +1,66 @@
+#This is the sampler description file. A sampler drives the test case generation
+Name: Sampler Description File
+Samplers: #The available sensors
+    Manual: false # Manual sampler requires parameters to be manually entered in this file
+    Random: true # Randomly samples the selected parameters
+    Halton: false # Pseudo random sampler
+    Grid: false # Grid sampler
+    Random_Neighborhood_Search: false # Active random sampler that uses previous performance of the system in sampling parameters for the next scene
+    Guided_Bayesian_Optimization: false # Bayesian optimization sampler with constraints included
+Scenario Specification: #If manual sampler selected manually enter the parameters
+    scene1: #Select the parameters for this scene. This will be checked against the parameters selected in the scene_description file
+        weather:
+          cloudiness: 0
+          precipitation: 0
+          precipitation_deposits: 0
+          sun_altitude_angle: 90
+          wind_intensity: 0
+          sun_azimuth_angle: 0
+          wetness: 0
+          fog_distance: 0
+          fog_density: 0
+        region: 1
+        traffic_density: 5
+        pedestrian_density: 0
+    scene2:
+        weather:
+          cloudiness: 0
+          precipitation: 10
+          precipitation_deposits: 20
+          sun_altitude_angle: 90
+          wind_intensity: 0
+          sun_azimuth_angle: 0
+          wetness: 0
+          fog_distance: 0
+          fog_density: 0
+        region: 1
+        traffic_density: 10
+        pedestrian_density: 2
+    scene3:
+        weather:
+          cloudiness: 0
+          precipitation: 0
+          precipitation_deposits: 30
+          sun_altitude_angle: 90
+          wind_intensity: 0
+          sun_azimuth_angle: 0
+          wetness: 0
+          fog_distance: 0
+          fog_density: 0
+        region: 1
+        traffic_density: 0
+        pedestrian_density: 0
+    scene4:
+        weather:
+          cloudiness: 5
+          precipitation: 0
+          precipitation_deposits: 0
+          sun_altitude_angle: 90
+          wind_intensity: 0
+          sun_azimuth_angle: 0
+          wetness: 0
+          fog_distance: 0
+          fog_density: 0
+        region: 1
+        traffic_density: 0
+        pedestrian_density: 2

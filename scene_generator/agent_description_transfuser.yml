@@ -1,0 +1,36 @@
+# This is the agent description file that can be used to select the agent parameters.
+# parameters can be turned off -> false or on -> true. Specific positions for agent sensors can be selected here.
+Name: Agent Description File
+Controller: #Select the controller for testing true -> for selection, false -> no selection
+  Transfuser: true
+  Learning_by_cheating: false
+  Own_controller: false #for testing your own controller, place the code in the skeleton (refer github readme), weights in the trained_models folder
+Sensors: # sensors selection false -> no selection, true -> places sensor in default location (defined in the sensors.py file), or provide the sensor parameters as a list
+      rgb_camera_center: [x:1.3, y:0.0, z:2.3, roll:0.0, pitch:0.0, yaw:0.0, width:400, height:300, fov:100, id:rgb]
+      rgb_camera_left: [x:1.3, y:0.0, z:2.3, roll:0.0, pitch:0.0, yaw:-60.0, width:400, height:300, fov:100, id:rgb_left]
+      rgb_camera_right: [x:1.3, y:0.0, z:2.3, roll:0.0, pitch:0.0, yaw:60.0, width:400, height:300, fov:100, id:rgb_right]
+      rgb_camera_rear: [x:-1.3, y:0.0, z:2.3, roll:0.0, pitch:0.0, yaw:-180.0, width:400, height:300, fov:100, id:rgb_rear]
+      radar: false #[x:2.8, y:0.0, z:1.0, roll:0.0, pitch:0.0, yaw:0.0, fov:25, sensor_tick:0.05, id:radar]
+      lidar: [x:1.3, y:0.0, z:2.5, roll:0.0, pitch:0.0, yaw:-90.0, id:lidar]
+      imu: [x:0.0, y:0.0, z:0.0, roll:0.0, pitch:0.0, yaw:0.0,sensor_tick:0.05, id:imu]
+      gnss: [x:0.0, y:0.0, z:0.0, roll:0.0, pitch:0.0, yaw:0.0,sensor_tick:0.01, id:gps]
+      segmentation_camera: false
+      speedometer: [reading_frequency:20, id:speed]
+      collision_detector: false
+      obstacle_detector: false
+Data Recorder: # Select the sensor data to be recorded. true -> record sensors, false -> no recording
+      rgb_camera_center: true
+      rgb_camera_left: true
+      rgb_camera_right: true
+      rgb_camera_rear: false
+      radar: false
+      lidar: false
+      imu: false
+      gnss: false
+      segmentation_camera: false
+      speedometer: false
+      #collision_detector: false
+      #obstacle_detector: false
+Record Location: false #false -> default location "/project_path/data/recorded"  true -> "/project_path/path_to_store/"
+Record Frequency: 20 #frequency at which the infractions need to be recorded. 20HZ is the default
+Display: true # true -> display turned on, false -> headless mode
