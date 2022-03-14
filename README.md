@@ -3,9 +3,9 @@
 Despite recent advances in autonomous driving systems, accidents such as the fatal Uber crash in 2018 show their susceptibility to edge cases. These systems need to be thoroughly tested and validated before being deployed in the real world to avoid such events. Testing in open-world scenarios can be difficult, time-consuming, and expensive. This can be addressed by using driving simulators such as CARLA instead. A key part of such tests is adversarial testing, where the goal is to find scenarios that lead to failures of the given system. While there have been several independent efforts in adversarial testing, no established testing framework that enables adaptive stress testing is currently available for CARLA. We propose ANTI-CARLA, an adversarial testing framework in CARLA for testing autonomous driving systems. The operating conditions in which a given system should be tested are specified in a scenario description language. The framework's key capability is an adversarial search mechanism that searches for trajectories of the operating conditions that will result in a failure. This way, ANTI-CARLA extends the CARLA simulator with the capability to perform adversarial testing on any given driving pipeline. We use ANTI-CARLA to test the Learning By Cheating (LBC) approach, automatically finding a range of fail cases despite LBC reaching an accuracy of 100\% in the CARLA challenge. Some examples of the scenes generated in this work are shown in the gif below. 
 
 <p align="center">
-  <img src="gif/crash.gif" />
-  <img src="gif/red-light.gif" />
-  <img src="gif/night.gif" />
+  <img src="figs/crash.gif" />
+  <img src="figs/red-light.gif" />
+  <img src="figs/night.gif" />
 </p>
 
 (Left) The AV system crashing on an interstate. (Center) The AV system running over a red light. (Right) The AV system driving in a night scene on an interstate.  
