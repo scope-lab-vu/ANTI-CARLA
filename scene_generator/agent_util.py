@@ -47,11 +47,10 @@ def write_sampler_results(route_path,folder,parameter_values,joined_parameters,d
 def parameter_sampler(dynamic_parameters,static_parameters,folder,simulation_run,route_path,y,sampler,data_path,total_scenes,scene_num,initial_condition,constraints,route_root,data_root):
     """
     The sampler code that takes in current step hyperparameters and returns new hyperparameter set
-    1. Manual Entry by User
-    2. Random Search
-    3. Bayesian Optimization Search
-    4. Hyperband Search
-    5. Reinforcement Learning
+    1. Random Search
+    2. Grid Search
+    3. Halton Search
+    4. Random Neighborhood Search
     """
     for entry in constraints:
         #print(entry[1])
