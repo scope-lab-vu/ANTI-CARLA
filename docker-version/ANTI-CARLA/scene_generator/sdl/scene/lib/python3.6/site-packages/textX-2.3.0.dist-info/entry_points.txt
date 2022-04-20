@@ -1,0 +1,18 @@
+[console_scripts]
+textx = textx.cli:textx
+
+[textx_commands]
+check = textx.cli.check:check
+generate = textx.cli.generate:generate
+list_generators = textx.cli.discover:list_generators
+list_languages = textx.cli.discover:list_languages
+version = textx.cli.version:version
+
+[textx_generators]
+any_dot = textx.generators:model_generate_dot
+textx_dot = textx.generators:metamodel_generate_dot
+textx_plantuml = textx.generators:metamodel_generate_plantuml
+
+[textx_languages]
+textx = textx.metamodel:textx
+
