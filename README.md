@@ -12,9 +12,7 @@ Despite recent advances in autonomous driving systems, accidents such as the fat
 
 ## Downloads
 
-To run this framework you will need to download the CARLA simulator. 
-
-***Manual Downloads***
+To run this framework you will need to download the following:
 
 1. You will also need to install CARLA 0.9.10 simulator version, along with the additional maps.
 Download CARLA 0.9.10 from [here](https://github.com/carla-simulator/carla/releases/tag/0.9.10) for more instructions. (Our setup works with CARLA 0.9.10 version. Using another version of the simulator will result in a version and API mismatch error.)
