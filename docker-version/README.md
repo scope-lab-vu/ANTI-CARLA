@@ -15,7 +15,7 @@ Alternately, enter into this repo and execute this script ```./make_volume_folde
 
 # Downloads
 
-***Step 1***: Manual Download: Download [CARLA_0.9.10](https://github.com/carla-simulator/carla/releases/tag/0.9.10/) and put it inside the carla_client folder. Please pull CARLA_0.9.10 version. If you pull any other version, there will be a mismatch between the CARLA simulation API and the client API. 
+***Step 1***: Manual Download: Download [CARLA_0.9.10](https://github.com/carla-simulator/carla/releases/tag/0.9.10/) and put it inside the ANTI-CARLA/docker-version folder. Please pull CARLA_0.9.10 version. If you pull any other version, there will be a mismatch between the CARLA simulation API and the client API. 
 
 Automated Downloads (Preferred): Enter into this repo and execute this script ```./pull_carla_simulator.sh``` to download these three requirements automatically into the required folders.
 
