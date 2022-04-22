@@ -8,8 +8,7 @@ Despite recent advances in autonomous driving systems, accidents such as the fat
   <img src="figs/night.gif" />
 </p>
  
-
-**Note**: You could either run the framework inside a virtual environment directly on your desktop or use the [docker version](). 
+**Note**: You can either run the framework inside a virtual environment directly on your desktop or run it inside a docker. To run the setup directly on your machine follow the instructions in this readme. If you want to setup a docker, follow the readme instructions in the [docker version](/docker-version) folder. 
 
 ## Downloads
 
