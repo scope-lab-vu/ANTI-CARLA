@@ -3,12 +3,13 @@
 ANTI-CARLA can also be run inside a docker. Follow these instructions to build and launch the docker version of the framework.
 
 # Create Folders for Docker Volumes
-Create three folders named ```routes```, ```simulation-data``` and ```images``` inside this directory. These folders are the data volumes for the carla client docker. Run the following
+Create three folders named ```routes```, ```simulation-data``` and ```recorded``` inside the data directory. These folders are the data volumes for the carla client docker. Run the following
 
 ```
-mkdir routes               #stores the scene information.
-mkdir simulation-data      #stores the sensor information
-mkdir images               #stores images if chosen by the user
+mkdir data
+mkdir data/routes               #stores the scene information.
+mkdir data/simulation-data      #stores the sensor information
+mkdir data/recorded             #stores the sensor data chosen by the user
 ```
 Alternately, enter into this repo and execute this script ```./make_volume_folders.sh``` to set up these empty folders.
 
@@ -20,11 +21,11 @@ Alternately, enter into this repo and execute this script ```./make_volume_folde
 
 Automated Downloads (Preferred): Enter into this repo and execute this script ```./pull_carla_simulator.sh``` to download these three requirements automatically into the required folders.
 
-***Step 2***: The preitrained LEC is got from [Learning By Cheating](https://github.com/bradyz/2020_CARLA_challenge). Download the weights from [here](https://vanderbilt365-my.sharepoint.com/:u:/g/personal/shreyas_ramakrishna_vanderbilt_edu/ETRBzI7Ai3VJt9zL7yPnJO4Bi5zYvgggreiY2CG68f8s8A?e=nGJIQl)
+***Step 2***: The preitrained controllers can be got from the following repos:
 
-Unzip the weights file and save it as ***model.ckpt*** in the carla-challange/carla_project folder. 
-
-
+1. [Learning By Cheating](https://github.com/bradyz/2020_CARLA_challenge). Unzip the weights file and save it as ***model.ckpt*** in the trained_models/Learning_by_cheating folder.
+2. [Transfuser](https://github.com/autonomousvision/transfuser). Unzip the weights file and save it in the trained_models/transfuser/model_ckpt folder.
+ 
 
 # Docker Build
 
