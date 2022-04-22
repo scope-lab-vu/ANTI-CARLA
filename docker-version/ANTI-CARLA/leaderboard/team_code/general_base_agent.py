@@ -21,7 +21,7 @@ class BaseAgent(autonomous_agent.AutonomousAgent):
     def general_base_agent_setup(self, path_to_conf_file, parsed_sensors, data_to_record, record_frequency, display, record_folder):
         self.track = autonomous_agent.Track.SENSORS
         self.config_path = path_to_conf_file
-        self.step = -1
+        self.base_agent_step = -1
         self.wall_start = time.time()
         self.initialized = False
         self.sensor = parsed_sensors
@@ -59,8 +59,8 @@ class BaseAgent(autonomous_agent.AutonomousAgent):
 
     def save(self, input_data):
         self.tick_data, self.view_data = self.tick_recorded_data(input_data)
-        if self.step % self.record_frequency == 0:
-            frame = self.step // self.record_frequency
+        if self.base_agent_step % self.record_frequency == 0:
+            frame = self.base_agent_step // self.record_frequency
             for recorded_sensor_name in self.data_to_record:
                 if ("rgb" or "segmentation") in recorded_sensor_name:
                     Image.fromarray(self.tick_data[recorded_sensor_name]).save(self.save_path / recorded_sensor_name / ('%04d.png' % frame))
@@ -68,7 +68,7 @@ class BaseAgent(autonomous_agent.AutonomousAgent):
                     np.save(self.save_path / recorded_sensor_name / ('%04d.npy' % frame), self.tick_data[recorded_sensor_name], allow_pickle=True)
 
     def tick_recorded_data(self, input_data):
-        self.step += 1
+        self.base_agent_step += 1
         result = {}
         view_data = {}
         for recorded_sensor in self.data_to_record:
@@ -112,4 +112,3 @@ class BaseAgent(autonomous_agent.AutonomousAgent):
             _draw = ImageDraw.Draw(_combined)
             cv2.imshow('map', cv2.cvtColor(np.array(_combined), cv2.COLOR_BGR2RGB))
             cv2.waitKey(1)
-

@@ -498,7 +498,7 @@ def decode_agent_description(agent_config):
         else:
             data_to_record.append(entry)
 
-    record_frequency = agent_config['Record Frequency']*20
+    record_frequency = agent_config['Record Frequency'] #*20
     record_location = agent_config['Record Location']
     display = agent_config['Display']
 
